@@ -17,8 +17,7 @@ This project helps commuters plan their trips by suggesting the optimal time the
 - **HTML5**: For front-end design.
 
 ---
-This project helps commuters plan their trips by suggesting the optimal time they should start in advance to ensure they reach their destination on time. The system leverages analytics-derived insights from historical transportation data to recommend the best departure time.
-## **Example Output**
+## **Output**
 
 Website : 
 
