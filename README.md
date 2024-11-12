@@ -4,8 +4,7 @@
 
 ## **Project Overview**
 
-This project suggests a time the commuter should start in advance to reach their destination on time utilizing analytics-derived info.
-
+This project helps commuters plan their trips by suggesting the optimal time they should start in advance to ensure they reach their destination on time. The system leverages analytics-derived insights from historical transportation data to recommend the best departure time.
 ---
 
 ## **Technologies Used**
