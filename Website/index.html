@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line1delaytime</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero" style="background-image: url('assets/images/hero-background.jpg'); background-size: cover; background-position: center; height: 100vh; display: flex; align-items: center; padding: 20px;">
+    <div class="hero-content" style="display: flex; flex-direction: column; align-items: center; color: white; width: 100%;">
+        
+        <!-- Heading for Line 1 Recommender -->
+        <h1>Line1 Max delay time calculater</h1>
+
+        <!-- Dropdowns in a Single Row for Line 1 -->
+        <div class="dropdown-row" style="display: flex; justify-content: space-between; width: 100%; max-width: 800px;">
+            <div class="hero-box" style="flex: 1;">
+                <label for="from-station-line1">From:</label>
+                <select id="from-station-line1" onchange="calculateDelay()">
+                    <option value="BLOOR STATION">BLOOR STATION</option>
+                    <option value="COLLEGE STATION">COLLEGE STATION</option>
+                    <option value="DAVISVILLE STATION">DAVISVILLE STATION</option>
+                    <option value="DOWNSVIEW PARK STATION">DOWNSVIEW PARK STATION</option>
+                    <option value="DUNDAS STATION">DUNDAS STATION</option>
+                    <option value="DUPONT STATION">DUPONT STATION</option>
+                    <option value="EGLINTON STATION">EGLINTON STATION</option>
+                    <option value="EGLINTON WEST STATION">EGLINTON WEST STATION</option>
+                    <option value="FINCH STATION">FINCH STATION</option>
+                    <option value="FINCH WEST STATION">FINCH WEST STATION</option>
+                    <option value="GLENCAIRN STATION">GLENCAIRN STATION</option>
+                    <option value="HIGHWAY 407 STATION">HIGHWAY 407 STATION</option>
+                    <option value="KING STATION">KING STATION</option>
+                    <option value="LAWRENCE STATION">LAWRENCE STATION</option>
+                    <option value="LAWRENCE WEST STATION">LAWRENCE WEST STATION</option>
+                    <option value="MUSEUM STATION">MUSEUM STATION</option>
+                    <option value="OSGOODE STATION">OSGOODE STATION</option>
+                    <option value="QUEEN STATION">QUEEN STATION</option>
+                    <option value="QUEEN'S PARK STATION">QUEEN'S PARK STATION</option>
+                    <option value="ROSEDALE STATION">ROSEDALE STATION</option>
+                    <option value="SHEPPARD WEST STATION">SHEPPARD WEST STATION</option>
+                    <option value="SHEPPARD-YONGE STATION">SHEPPARD-YONGE STATION</option>
+                    <option value="SPADINA STATION">SPADINA STATION</option>
+                    <option value="ST ANDREW STATION">ST ANDREW STATION</option>
+                    <option value="ST CLAIR STATION">ST CLAIR STATION</option>
+                    <option value="ST CLAIR WEST STATION">ST CLAIR WEST STATION</option>
+                    <option value="ST GEORGE STATION">ST GEORGE STATION</option>
+                    <option value="ST PATRICK STATION">ST PATRICK STATION</option>
+                    <option value="SUMMERHILL STATION">SUMMERHILL STATION</option>
+                    <option value="UNION STATION">UNION STATION</option>
+                    <option value="WELLESLEY STATION">WELLESLEY STATION</option>
+                    <option value="WILSON STATION">WILSON STATION</option>
+                    <option value="YORK MILLS STATION">YORK MILLS STATION</option>
+                    <option value="YORKDALE STATION">YORKDALE STATION</option>
+                </select>
+            </div>
+
+            <div class="hero-box" style="flex: 1;">
+                <label for="to-station-line1">To:</label>
+                <select id="to-station-line1" onchange="calculateDelay()">
+                    <option value="BLOOR STATION">BLOOR STATION</option>
+                    <option value="COLLEGE STATION">COLLEGE STATION</option>
+                    <option value="DAVISVILLE STATION">DAVISVILLE STATION</option>
+                    <option value="DOWNSVIEW PARK STATION">DOWNSVIEW PARK STATION</option>
+                    <option value="DUNDAS STATION">DUNDAS STATION</option>
+                    <option value="DUPONT STATION">DUPONT STATION</option>
+                    <option value="EGLINTON STATION">EGLINTON STATION</option>
+                    <option value="EGLINTON WEST STATION">EGLINTON WEST STATION</option>
+                    <option value="FINCH STATION">FINCH STATION</option>
+                    <option value="FINCH WEST STATION">FINCH WEST STATION</option>
+                    <option value="GLENCAIRN STATION">GLENCAIRN STATION</option>
+                    <option value="HIGHWAY 407 STATION">HIGHWAY 407 STATION</option>
+                    <option value="KING STATION">KING STATION</option>
+                    <option value="LAWRENCE STATION">LAWRENCE STATION</option>
+                    <option value="LAWRENCE WEST STATION">LAWRENCE WEST STATION</option>
+                    <option value="MUSEUM STATION">MUSEUM STATION</option>
+                    <option value="OSGOODE STATION">OSGOODE STATION</option>
+                    <option value="QUEEN STATION">QUEEN STATION</option>
+                    <option value="QUEEN'S PARK STATION">QUEEN'S PARK STATION</option>
+                    <option value="ROSEDALE STATION">ROSEDALE STATION</option>
+                    <option value="SHEPPARD WEST STATION">SHEPPARD WEST STATION</option>
+                    <option value="SHEPPARD-YONGE STATION">SHEPPARD-YONGE STATION</option>
+                    <option value="SPADINA STATION">SPADINA STATION</option>
+                    <option value="ST ANDREW STATION">ST ANDREW STATION</option>
+                    <option value="ST CLAIR STATION">ST CLAIR STATION</option>
+                    <option value="ST CLAIR WEST STATION">ST CLAIR WEST STATION</option>
+                    <option value="ST GEORGE STATION">ST GEORGE STATION</option>
+                    <option value="ST PATRICK STATION">ST PATRICK STATION</option>
+                    <option value="SUMMERHILL STATION">SUMMERHILL STATION</option>
+                    <option value="UNION STATION">UNION STATION</option>
+                    <option value="WELLESLEY STATION">WELLESLEY STATION</option>
+                    <option value="WILSON STATION">WILSON STATION</option>
+                    <option value="YORK MILLS STATION">YORK MILLS STATION</option>
+                    <option value="YORKDALE STATION">YORKDALE STATION</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Display Cumulative Delay Time -->
+        <div id="delay-output" style="margin-top: 20px; font-size: 1.2em;"></div>
+    </div>
+</section>
+
+<script>
+    // Station delay data (from the provided table)
+    const stationDelays = {
+        "BLOOR STATION": 1.904875,
+        "COLLEGE STATION": 2.0275,
+        "DAVISVILLE STATION": 4.0,
+        "DOWNSVIEW PARK STATION": 3.532609,
+        "DUNDAS STATION": 1.748397,
+        "DUPONT STATION": 3.555556,
+        "EGLINTON STATION": 3.407336,
+        "EGLINTON WEST STATION": 3.178378,
+        "FINCH STATION": 2.311669,
+        "FINCH WEST STATION": 2.905325,
+        "GLENCAIRN STATION": 4.067308,
+        "HIGHWAY 407 STATION": 3.113636,
+        "KING STATION": 2.631818,
+        "LAWRENCE STATION": 4.940639,
+        "LAWRENCE WEST STATION": 2.419689,
+        "MUSEUM STATION": 7.443609,
+        "OSGOODE STATION": 3.240506,
+        "QUEEN STATION": 2.419929,
+        "QUEEN'S PARK STATION": 2.206897,
+        "ROSEDALE STATION": 5.318182,
+        "SHEPPARD WEST STATION": 3.512605,
+        "SHEPPARD-YONGE STATION": 2.549505,
+        "SPADINA STATION": 0.0,
+        "ST ANDREW STATION": 3.293706,
+        "ST CLAIR STATION": 3.934211,
+        "ST CLAIR WEST STATION": 3.043137,
+        "ST GEORGE STATION": 0.6,
+        "ST PATRICK STATION": 2.769231,
+        "SUMMERHILL STATION": 4.338889,
+        "UNION STATION": 2.488789,
+        "WELLESLEY STATION": 2.8125,
+        "WILSON STATION": 3.344828,
+        "YORK MILLS STATION": 5.042017,
+        "YORKDALE STATION": 4.622222
+    };
+
+    function calculateDelay() {
+        const fromStation = document.getElementById("from-station-line1").value;
+        const toStation = document.getElementById("to-station-line1").value;
+
+        const stationNames = Object.keys(stationDelays);
+        const fromIndex = stationNames.indexOf(fromStation);
+        const toIndex = stationNames.indexOf(toStation);
+
+        if (fromIndex === -1 || toIndex === -1 || fromIndex >= toIndex) {
+            document.getElementById("delay-output").innerHTML = "Please select a valid route.";
+            return;
+        }
+
+        let cumulativeDelay = 0;
+        for (let i = fromIndex; i <= toIndex; i++) {
+            cumulativeDelay += stationDelays[stationNames[i]];
+        }
+
+        document.getElementById("delay-output").innerHTML = `Maximum delay time: ${cumulativeDelay.toFixed(2)} mins`;
+    }
+</script>
+
+
+
+
+    <!-- Contact Section with GitHub and LinkedIn only -->
+    <section id="contact" class="contact">
+        <h2>Links</h2>
+        <a href="https://github.com/Hemysai/Line1MaxDelayCalculator.git" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/hemanth-sai-balasada-b06b40151/" target="_blank">LinkedIn</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 | TTC Delay Calculator</p>
+    </footer>
+
+</body>
+</html>
